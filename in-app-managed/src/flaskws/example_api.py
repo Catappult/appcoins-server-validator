@@ -1,7 +1,6 @@
 import re
-from json import dumps
 
-from flask import Response, request
+from flask import request
 from flask_restx import Resource, abort, Namespace
 
 from src import settings
@@ -35,8 +34,9 @@ def parse_purchase_check_url(url):
 @example_api.route("/com.appcoins.trivialdrivesample.test/check")
 class ExampleCheck(Resource):
     @example_api.expect(example_parser.get_parser_adder())
-    @example_api.response(200, "Success")
-    @example_api.response(400, "Bad purchase")
+    @example_api.response(200, "Purchase successfully validated")
+    @example_api.response(200, "Unable to find purchase")
+    @example_api.response(400, "Bad purchase input")
     @example_api.response(503, "Service Unavailable")
     @example_api.response(504, "Gateway timeout")
     def get(self):
@@ -52,9 +52,6 @@ class ExampleCheck(Resource):
 
         try:
             raw_result = api_validator.validate(purchase)
-            parsed_result = dumper.create_output(raw_result)
-
-            return Response(dumps(parsed_result), status=200,
-                            mimetype='application/json')
+            return dumper.get_output(raw_result)
         except APIValidatorException as e:
             abort(code=503, error="ERROR-503-1", status=None, message=str(e))
