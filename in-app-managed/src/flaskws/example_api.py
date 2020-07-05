@@ -35,8 +35,8 @@ def parse_purchase_check_url(url):
 class ExampleCheck(Resource):
     @example_api.expect(example_parser.get_parser_adder())
     @example_api.response(200, "Purchase successfully validated")
-    @example_api.response(200, "Unable to find purchase")
     @example_api.response(400, "Bad purchase input")
+    @example_api.response(404, "Unable to find purchase")
     @example_api.response(503, "Service Unavailable")
     @example_api.response(504, "Gateway timeout")
     def get(self):
