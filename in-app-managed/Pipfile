@@ -9,7 +9,6 @@ verify_ssl = true
 flask = "*"
 flask-restx = "*"
 requests = "*"
-rsa = "*"
 gevent = "*"
 psutil = "*"
 
