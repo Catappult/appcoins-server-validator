@@ -1,7 +1,7 @@
 from flask import url_for
 from flask_restx import Api
 
-from .base_api import base_api
+from src.flaskws.base_api import base_api
 from src.flaskws.example_api import example_api
 
 
@@ -33,10 +33,10 @@ class ApiFactory:
     def __create_api(self) -> SwaggerApi:
         api = SwaggerApi(
             version="1.0",
-            title="Purchase Checker API",
-            description="An API to manage purchases",
+            title="API testing",
+            description="One step payment with credits"
         )
 
-        api.add_namespace(base_api, "/purchase")
-        api.add_namespace(example_api, "/purchase")
+        api.add_namespace(base_api, "/base")
+        api.add_namespace(example_api, "/one-step")
         return api

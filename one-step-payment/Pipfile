@@ -11,6 +11,7 @@ flask-restx = "*"
 requests = "*"
 gevent = "*"
 psutil = "*"
+pyngrok = "*"
 gunicorn = "*"
 
 [requires]
