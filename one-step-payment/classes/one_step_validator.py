@@ -1,9 +1,9 @@
 import logging
 import time
 
-from src.classes.catappult_api import CatappultApi
-from src.classes.postback_api import PostbackApi
-from src.classes.purchase_entity import PurchaseEntity
+from classes.catappult_api import CatappultApi
+from classes.postback_api import PostbackApi
+from classes.purchase_entity import PurchaseEntity
 
 
 class ValidatorException(Exception):

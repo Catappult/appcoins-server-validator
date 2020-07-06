@@ -1,8 +1,8 @@
 from flask import Flask
 from gevent.pywsgi import WSGIServer
 
-from src import settings
-from src.flaskws.api_factory import ApiFactory
+import settings
+from flaskws.api_factory import ApiFactory
 
 api_factory = ApiFactory()
 api = api_factory.get_api()

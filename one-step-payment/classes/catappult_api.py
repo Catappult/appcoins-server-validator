@@ -5,7 +5,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from src.classes.cache import Cache
+from classes.cache import Cache
 
 
 class CatappultApi:
@@ -42,7 +42,6 @@ class CatappultApi:
         try:
             response = requests.post(url, params=params, data=data,
                                      timeout=self.timeout)
-            logging.warning(response.content)
             if response.status_code in (200, 201):
                 return response.json()
             else:

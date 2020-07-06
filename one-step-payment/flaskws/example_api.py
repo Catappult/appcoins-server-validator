@@ -4,10 +4,10 @@ import logging
 from flask import request, jsonify
 from flask_restx import Namespace, Resource
 
-from src import settings
-from src.classes.cache import Cache
-from src.classes.catappult_api import CatappultApi
-from src.classes.transaction_repository import TransactionRepository
+import settings
+from classes.cache import Cache
+from classes.catappult_api import CatappultApi
+from classes.transaction_repository import TransactionRepository
 
 example_api = Namespace("one-step", description="One-Step operations")
 catappult_api = CatappultApi(settings.CATAPPULT_API_HOST, Cache())

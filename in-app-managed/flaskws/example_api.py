@@ -3,15 +3,15 @@ import re
 from flask import request
 from flask_restx import Resource, abort, Namespace
 
-from src import settings
-from src.classes.api_validator import (
+import settings
+from classes.api_validator import (
     APIValidator, APIValidatorException
 )
-from src.classes.cache import Cache
-from src.classes.catappult_api import CatappultApi
-from src.classes.purchase_entity import PurchaseEntity
-from src.flaskws.example_dumper import ExampleDumper
-from src.flaskws.example_parser import ExampleParser
+from classes.cache import Cache
+from classes.catappult_api import CatappultApi
+from classes.purchase_entity import PurchaseEntity
+from flaskws.example_dumper import ExampleDumper
+from flaskws.example_parser import ExampleParser
 
 example_api = Namespace("purchase", description="Purchase operations")
 example_parser = ExampleParser()

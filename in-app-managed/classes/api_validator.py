@@ -1,7 +1,7 @@
 import logging
 
-from src.classes.catappult_api import CatappultApi
-from src.classes.purchase_entity import PurchaseEntity
+from classes.catappult_api import CatappultApi
+from classes.purchase_entity import PurchaseEntity
 
 
 class APIValidatorException(Exception):

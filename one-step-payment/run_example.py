@@ -3,14 +3,15 @@ import logging
 import random
 import string
 
+import settings
 from ngrok.ngrok_service import NgrokService
-from src import settings
-from src.classes.cache import Cache
-from src.classes.catappult_api import CatappultApi
-from src.classes.one_step_validator import OneStepPaymentValidator, \
-    ValidatorException
-from src.classes.postback_api import PostbackApi
-from src.classes.purchase_entity import PurchaseEntity
+from classes.cache import Cache
+from classes.catappult_api import CatappultApi
+from classes.one_step_validator import (
+    OneStepPaymentValidator, ValidatorException
+)
+from classes.postback_api import PostbackApi
+from classes.purchase_entity import PurchaseEntity
 
 
 def generate_reference() -> str:

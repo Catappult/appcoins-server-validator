@@ -1,4 +1,4 @@
-from src.classes.catappult_api import CatappultApi
+from classes.catappult_api import CatappultApi
 
 
 class TransactionRepository:
